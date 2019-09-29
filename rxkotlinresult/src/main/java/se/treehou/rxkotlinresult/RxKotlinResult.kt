@@ -31,6 +31,15 @@ fun <T> Flowable<Result<T>>.filterSuccess(): Flowable<T> {
     }.map { (value, _) -> value }
 }
 
+fun <T> Observable<Result<T>>.filterSuccess(): Observable<T> {
+    return filter {
+        when (it) {
+            is Result.Success -> true
+            is Result.Failure -> false
+        }
+    }.map { (value, _) -> value }
+}
+
 fun <T, D> Single<Result<T>>.mapResult(action: (T) -> D): Single<Result<D>> {
     return map { result ->
         when(result) {
