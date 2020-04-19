@@ -1,8 +1,8 @@
 package se.treehou.rxkotlinresult
 
-import io.reactivex.Flowable
-import io.reactivex.Observable
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Single
 import se.treehou.kotlinresult.Result
 import se.treehou.kotlinresult.Result.Failure
 import se.treehou.kotlinresult.Result.Success
